@@ -1,3 +1,4 @@
+import time
 import pandas as pd
 import psycopg2
 from psycopg2 import extras
@@ -36,8 +37,6 @@ def get_creds(source_id, conn):
     creds_dict = dict(zip(col_names, creds))
 
     return creds_dict
-
-
 
 def login(creds_dict):
     headers = {
@@ -91,7 +90,6 @@ def get_count(session):
         return count_value
     else:
         print("Ni bni baat")
-
 
 conn = db_conn()
 creds = get_creds(591, conn)
